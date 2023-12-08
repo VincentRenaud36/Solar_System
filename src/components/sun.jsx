@@ -6,28 +6,33 @@ import * as THREE from "three";
 import { useCursorStyle } from "./controls/useCursorStyle";
 import {HoveredMesh} from './controls/hoveredMesh';
 import { sunSize } from "./controls/size";
-
+import { useCameraFollow } from "./controls/useCameraFollow";
 
 export function Sun(){
     const [sunMap] = useLoader(TextureLoader, [SunTexture]);
     const [hovered, setHover] = useState(false);
     useCursorStyle(hovered);
+    const { setTarget } = useCameraFollow(sunSize);
 
     return (
         <group>
             <mesh
                 onPointerOver={() => setHover(true)}
                 onPointerOut={() => setHover(false)}
+                onClick={(e) => {
+                    setTarget(e.object);
+                }}
             >
             <sphereGeometry args={[sunSize, 32, 32]}/>
-            <meshPhongMaterial 
+            <meshLambertMaterial color="#ffffff" 
             map={sunMap}
-            metalness={4}
+            metalness={15}
+            shininess={100}
+            specular={0xFFFFFF}
             />
             </mesh>
             <HoveredMesh hovered={hovered} size={sunSize}/>
         </group>
-        
-        
+     
     )
 }

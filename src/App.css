@@ -1,3 +1,12 @@
+@font-face {
+	font-family: Cinzel;
+	src: url(/src/fonts/Cinzel-VariableFont_wght.woff);
+}
+@font-face {
+	font-family: SmoochSans;
+	src: url(/src/fonts/SmoochSans-VariableFont_wght.woff);
+}
+
 html,
 body,
 #root {
@@ -5,9 +14,122 @@ body,
   height: 100%;
 }
 #root{
-  background-color: #01040c;
+  /* background-color: #01040c; */
+  /* background-image: url(/src/textures/background/8k_stars_milky_way.jpg);
+  background-size: cover; */
 }
 *{
     padding: 0;
     margin: 0;
+}
+.infoPlanete {
+    z-index: 2;
+    position: absolute;
+    top: 50vh;
+    left: 5vw;
+    color: white;
+    overflow-y: scroll;
+    max-height: 50vh;
+}
+  
+.infoPlanete img{
+    position: absolute;
+    width:40px;
+    height: 40px;
+    top:0;
+    right: 0;
+    margin: 20px;
+}
+  
+.infoPlanete h2 {
+    font-size: 60px;
+    font-family: Cinzel;
+    font-weight: normal;
+}
+  
+.infoPlanete .trait{
+    border-bottom: 1px solid white;
+    margin: 20px 0;
+}
+  
+.infoPlanete ul{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 90vw;
+}
+  
+.infoPlanete ul li{
+    margin: 10px;
+    list-style-type: none;
+    width: 45%;
+    font-family: SmoochSans;
+    font-weight: bold;
+}
+  
+.infoPlanete ul li div{
+    font-size: 24px;
+    font-family: Cinzel;
+    font-weight: normal;
+    margin-top: 5px;
+}
+  
+.infoPlanete ul li div sup{
+    font-size: 12px;
+}
+
+@media screen and (min-width: 1024px) {
+    .infoPlanete{
+      overflow:visible;
+      max-height: 60vh;
+      top: 15vh;
+      left: 65vw;
   }
+  .infoPlanete img{
+    position: absolute;
+    width:40px;
+    height: 40px;
+    top:0;
+    right: 0;
+    margin: 8px 150px 20px 0;
+    cursor: pointer;
+}
+  .infoPlanete ul{
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 45vw;
+  }
+  .infoPlanete .trait{
+    border-bottom: 1px solid white;
+    margin: 20px 150px 20px 0;
+}
+.infoPlanete h2 {
+  font-size: 40px;
+  font-family: Cinzel;
+  font-weight: normal;
+}
+.infoPlanete ul{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90vw;
+}
+
+.infoPlanete ul li{
+  margin: 10px;
+  list-style-type: none;
+  /* width: 45%; */
+  font-family: SmoochSans;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.infoPlanete ul li div{
+  font-size: 24px;
+  font-family: Cinzel;
+  font-weight: normal;
+  margin-top: 5px;
+}
+
+.infoPlanete ul li div sup{
+  font-size: 12px;
+}
+}

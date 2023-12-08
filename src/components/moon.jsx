@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import  MoonTexture from "/src/textures/moon/8k_moon.jpg"
-import { animateOrbitAndRotation } from './orbitAndRotation';
+import { animateOrbitAndRotation } from '../components/controls/orbitAndRotation';
 import * as THREE from "three";
 import { HoveredMesh } from './hoveredMesh';
 

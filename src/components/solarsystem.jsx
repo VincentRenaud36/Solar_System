@@ -1,6 +1,6 @@
-import React from "react";
-import { OrbitControls, Stars } from "@react-three/drei";
-import { Canvas, useThree } from '@react-three/fiber';
+import React, {useState, useEffect, useContext, useCallback} from "react";
+import { OrbitControls, Stars, useCamera } from "@react-three/drei";
+import { Canvas, useThree, useFrame } from '@react-three/fiber';
 import { Sun } from './sun';
 import { Mercury } from "./mercury";
 import { Venus } from "./venus";
@@ -10,18 +10,18 @@ import { Jupiter } from "./jupiter";
 import { Saturn } from "./saturn";
 import { Neptune } from "./neptune";
 import { Uranus } from "./uranus";
-// import { configureCameraForPlanet } from './cameraControl';
-
+import { PlanetContext } from './../App';
+import { useCameraFollow } from "./controls/useCameraFollow";
+import { sunSize } from "./controls/size";
 
 export function SolarSytem(){
-//     { const { size } = useThree(); // hook de react-three-fiber
-//   console.log("Taille du rendu (canvas) :", size); }
-    
+    const { camera } = useThree();
     return (
         <>
-            <Stars radius={300} depth={60} count={20000} factor={7} saturation={0} fade={true}/>
-            <ambientLight />
-        {/* <pointLight color="#f7f3e0" position={[2, 0, 2]} intensity={25}/> */}
+            <ambientLight intensity={0.5} />
+        <pointLight color="#f7f3e0" position={[0, 0, 0]} intensity={300} distance={3000}/>
+            {/* <hemisphereLight skyColor={"#ffffff"} groundColor={"#ffffff"} intensity={0.25} />
+    <pointLight position={[0, 0, 0]} intensity={500} distance={sunSize + 15} /> */}
             <OrbitControls 
                 enableZoom={true} 
                 enablePan={true} 
