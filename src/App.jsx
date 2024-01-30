@@ -13,7 +13,7 @@ const CanvasContainer = styled.div`
 export const PlanetContext = createContext();
 function App() {
   const [planet, setPlanet] = useState(null);
-  const [setTarget, resetCamera] = useState(null); // Assurez-vous d'appeler useCameraFollow avec la bonne échelle
+  const [setTarget, resetCamera] = useState(null); 
 
 const handleClose = useCallback(() => {
   setPlanet(null);

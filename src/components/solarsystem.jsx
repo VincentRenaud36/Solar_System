@@ -18,10 +18,10 @@ export function SolarSytem(){
     const { camera } = useThree();
     return (
         <>
-            <ambientLight intensity={0.5} />
-        <pointLight color="#f7f3e0" position={[0, 0, 0]} intensity={300} distance={3000}/>
-            {/* <hemisphereLight skyColor={"#ffffff"} groundColor={"#ffffff"} intensity={0.25} />
-    <pointLight position={[0, 0, 0]} intensity={500} distance={sunSize + 15} /> */}
+            {/* <ambientLight intensity={1} /> */}
+        <pointLight color="#f7f3e0" position={[0, 0, 0]} intensity={2000} distance={3000}/>
+            {/* <hemisphereLight skyColor={"#ffffff"} groundColor={"#ffffff"} intensity={0.25} /> */}
+    {/* <pointLight position={[0, 0, 0]} intensity={500} distance={sunSize + 15} /> */}
             <OrbitControls 
                 enableZoom={true} 
                 enablePan={true} 
